@@ -1,0 +1,14 @@
+test-results.xml
+
+__pycache__/
+*.py[cod]
+
+*.egg-info/
+*.egg
+
+htmlcov/
+.tox/
+.coverage
+.cache
+AUTHORS
+ChangeLog
