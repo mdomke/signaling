@@ -1,0 +1,4 @@
+hacking
+mock
+pytest
+pytest-cov
