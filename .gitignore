@@ -10,5 +10,7 @@ htmlcov/
 .tox/
 .coverage
 .cache
+build/
+dist/
 AUTHORS
 ChangeLog

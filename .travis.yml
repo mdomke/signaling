@@ -1,0 +1,20 @@
+language: python
+python:
+- '2.7'
+- '3.5'
+install:
+- pip install -U pip wheel tox-travis
+script:
+- tox
+deploy:
+  provider: pypi
+  user: mdomke
+  password:
+    secure: E6nulEorqgG5b7FKbPCj+1UmkuCm8yhUsh177aGGsTq68pTup6WRCWBILbPRyce/B7KV6B4FRw6v8A0kfRuiDBseWGRJ2fQgesIWP07mX7ZKK1breWHxeWKiFIIhsLuyCHs41mWynS24zyxD6sQfYIdTJw4ftlQcRsU3+QIGBqiBNt1f5JDjPw9+19PMnhQ7lr/dfe7eMMvlaLEc71mo5NqOvSFJ/iEnaDP/fRBBA5uxGMzqMVFmqKuN4H3hl+zJ/TcATfRIdTN5BeQww2wiGkS4sL8fzojpl4PrR8ra4msf2rnna1ih6lwpOU1Ae2Ooe1zLyzAJvpdsHfC7GVeQUAPCUvNuTREn2h311+wmVUhVB0pBewzvYfZzQCqvtk7JUW0wl6ADpJNu5L4i651g6fBNy4AQftfnBYnfRGgUzo+uoJ32krTTlVoFvVmR79SmOIzrxczmy2QHG+maSjkx8z5zm/0eUwaR5Z2N54Rj3iCh/4vfWRgIGc6Eryua1k9alcLND4q0w9Lzitbz2yHFLMuCInUS0hEUWmT7Igb//Vicg/n7JF7yBwfbEgbxUz/SD/HJifeuol7omElDImqYmfCoaeRPTHhgAA4IisNqlEFlZUCFB10v0illao2ns+teA8Lr4Hnd+Tcg+mPEzFQ1Mzdze7G4HSINEafgVO68sHA=
+  distributions: sdist bdist_wheel
+  docs_dir: docs/build/html
+  on:
+    tags: true
+    python: '3.5'
+    all_branches: true
+    repo: mdomke/signaling

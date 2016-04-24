@@ -18,6 +18,9 @@ class Signal(object):
 
         Args:
             kwargs: Keyword arguments to be passed to connected slots.
+
+        Raises:
+            :exc:`InvalidEmit`: If arguments don't match signal specification.
         """
         self._ensure_emit_kwargs(kwargs)
         for slot in self.slots:
@@ -51,7 +54,11 @@ class Signal(object):
         if inspect.ismethod(slot) and 'self' in argspec.args:
             argspec.args.remove('self')
         if self.args and self.args != argspec.args and not argspec.keywords:
-            raise InvalidSlot("Slot has to accept args {} or **kwargs.".format(self.args))
+            raise InvalidSlot("Slot '{}' has to accept args {} or "
+                              "**kwargs.".format(slot.__name__, self.args))
+        if not self.args and argspec.args:
+            raise InvalidSlot("Slot '{}' has to be callable without "
+                              "arguments".format(slot.__name__))
 
     def disconnect(self, slot):
         """Disconnect ``slot`` from this signal."""
