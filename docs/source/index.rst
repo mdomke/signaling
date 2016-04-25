@@ -2,6 +2,8 @@
 ``signaling`` slots with signals
 ================================
 
+Version: |version|
+
 
 Signaling is a Python library that provides a simple implementation of the 
 `signal/slot pattern`_ best known from the `Qt framework`_. It allows you to
