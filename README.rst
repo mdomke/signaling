@@ -4,6 +4,8 @@
     :target: https://travis-ci.org/mdomke/signaling
 .. image:: https://img.shields.io/pypi/l/signaling.svg?style=flat-square
     :target: https://pypi.python.org/pypi/signaling
+.. image:: https://img.shields.io/coveralls/mdomke/signaling.svg?style=flat-square
+    :target: https://github.com/mdomke/signaling
 
 What is this?
 =============
